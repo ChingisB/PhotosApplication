@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_navigation"
+    app:startDestination="@id/newPhotosFragment">
+
+    <fragment
+        android:id="@+id/popularPhotosFragment"
+        android:name="com.example.photosapplication.ui.popularPhotos.PopularPhotosFragment"
+        android:label="Popular"
+        tools:layout="@layout/fragment_popular_photos" >
+        <action
+            android:id="@+id/action_populartPhotosFragment_to_photoDetailsFragment"
+            app:destination="@id/photoDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newPhotosFragment"
+        android:name="com.example.photosapplication.ui.newPhotos.NewPhotosFragment"
+        android:label="New"
+        tools:layout="@layout/fragment_new_photos" >
+        <action
+            android:id="@+id/action_newPhotosFragment_to_photoDetailsFragment"
+            app:destination="@id/photoDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/photoDetailsFragment"
+        android:name="com.example.photosapplication.ui.photoDetails.PhotoDetailsFragment"
+        android:label=""
+        tools:layout="@layout/fragment_photo_details" >
+        <argument
+            android:name="photo"
+            app:argType="com.example.photosapplication.models.Photo" />
+    </fragment>
+</navigation>
